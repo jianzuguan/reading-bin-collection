@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/reading-bin-collection/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/reading-bin-collection/static/js/main.e2207564.chunk.js",
+    "main.js.map": "/reading-bin-collection/static/js/main.e2207564.chunk.js.map",
+    "runtime-main.js": "/reading-bin-collection/static/js/runtime-main.8f4a9953.js",
+    "runtime-main.js.map": "/reading-bin-collection/static/js/runtime-main.8f4a9953.js.map",
+    "static/js/2.bd1d004d.chunk.js": "/reading-bin-collection/static/js/2.bd1d004d.chunk.js",
+    "static/js/2.bd1d004d.chunk.js.map": "/reading-bin-collection/static/js/2.bd1d004d.chunk.js.map",
+    "static/js/3.ac069b31.chunk.js": "/reading-bin-collection/static/js/3.ac069b31.chunk.js",
+    "static/js/3.ac069b31.chunk.js.map": "/reading-bin-collection/static/js/3.ac069b31.chunk.js.map",
+    "index.html": "/reading-bin-collection/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/reading-bin-collection/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.bd1d004d.chunk.js.LICENSE.txt": "/reading-bin-collection/static/js/2.bd1d004d.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/reading-bin-collection/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8f4a9953.js",
+    "static/js/2.bd1d004d.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.e2207564.chunk.js"
+  ]
+}
