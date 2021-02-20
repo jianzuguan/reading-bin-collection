@@ -1,38 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import PostcodeSearchBar from './components/PostcodeSearchBar';
-import DoorNumberSearchBar from './components/DoorNumberSearchBar';
-import AddressList from './components/AddressList';
-import fetchAddresses from './api/getAddresses';
-import {isPostcodeValid} from './utils'
+import React, { useEffect, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import PostcodeSearchBar from "./components/PostcodeSearchBar";
+import DoorNumberSearchBar from "./components/DoorNumberSearchBar";
+import AddressList from "./components/AddressList";
+import fetchAddresses from "./api/fetchAddresses";
+import { isPostcodeValid } from "./utils";
+import CollectionList from "./components/CollectionList";
+import fetchCollections from "./api/fetchCollections";
 
 function App() {
-  const [postcode, setPostcode] = useState<string>('');
-  const [doorNumber, setDoorNumber] = useState<string>('');
+  const [postcode, setPostcode] = useState<string>("");
+  const [doorNumber, setDoorNumber] = useState<string>("");
+  const [uprn, setUprn] = useState<string>();
   const [addressList, setAddressList] = useState<any[]>([]);
+  const [collections, setCollections] = useState<any[]>([]);
 
-  useEffect( () => {
-    const fetchAddressData = async () => {
+  useEffect(() => {
+    const getAddresses = async () => {
       const addressesResult = await fetchAddresses(postcode);
-      
+
       setAddressList(addressesResult.Addresses);
-    }
+    };
 
     if (isPostcodeValid(postcode)) {
-      fetchAddressData();
+      getAddresses();
     }
-    
-    return () => {
-    }
+
+    return () => {};
   }, [postcode]);
+
+  useEffect(() => {
+    if (uprn === undefined) {
+      return;
+    }
+
+    const getCollections = async () => {
+      const collectionResult = await fetchCollections(uprn);
+
+      setCollections(collectionResult.Collections);
+    }
+    getCollections();
+  }, [uprn]);
 
   return (
     <div className="App">
       <PostcodeSearchBar onChange={setPostcode} />
       <DoorNumberSearchBar onChange={setDoorNumber} />
-    
-      <AddressList addressList={addressList} doorNumber={doorNumber}/>
+
+      {collections.length === 0 ? (
+        <AddressList
+          addressList={addressList}
+          doorNumber={doorNumber}
+          setUprn={setUprn}
+        />
+      ) : (
+        <CollectionList collectionList={collections} />
+      )}
     </div>
   );
 }

@@ -4,10 +4,11 @@ import AddressListItem from "./AddressListItem";
 interface IProps {
   addressList: any[];
   doorNumber: string;
+  setUprn: (uprn: string) => void;
 }
 
 const AddressList = (props: IProps) => {
-  const { addressList, doorNumber } = props;
+  const { addressList, doorNumber, setUprn } = props;
 
   return (
     <div>
@@ -16,6 +17,9 @@ const AddressList = (props: IProps) => {
           return (
             <AddressListItem
               addressData={addressData}
+              onClick={() => {
+                setUprn(addressData.AccountSiteUprn);
+              }}
               key={addressData.AccountSiteUprn}
             />
           );
