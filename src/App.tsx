@@ -1,24 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PostcodeSearchBar from './components/PostcodeSearchBar';
+import DoorNumberSearchBar from './components/DoorNumberSearchBar';
+import AddressList from './components/AddressList';
+import fetchAddresses from './api/getAddresses';
+import {isPostcodeValid} from './utils'
 
 function App() {
+  const [postcode, setPostcode] = useState<string>('');
+  const [doorNumber, setDoorNumber] = useState<string>('');
+  const [addressList, setAddressList] = useState<any[]>([]);
+
+  useEffect( () => {
+    const fetchAddressData = async () => {
+      const addressesResult = await fetchAddresses(postcode);
+      
+      setAddressList(addressesResult.Addresses);
+    }
+
+    if (isPostcodeValid(postcode)) {
+      fetchAddressData();
+    }
+    
+    return () => {
+    }
+  }, [postcode]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PostcodeSearchBar onChange={setPostcode} />
+      <DoorNumberSearchBar onChange={setDoorNumber} />
+    
+      <AddressList addressList={addressList} doorNumber={doorNumber}/>
     </div>
   );
 }
