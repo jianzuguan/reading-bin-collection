@@ -9,9 +9,13 @@ interface CollectionsResponse {
   Collections: Collection[];
 }
 
+const debug = true;
+
 // uprn: Unique Property Reference Number
 const fetchCollections = async (uprn: string) => {
-  return collections.Collections;
+  if (debug) {
+    return collections.Collections;
+  }
 
   const response = await fetch(
     "https://api.reading.gov.uk/rbc/mycollections/" + uprn

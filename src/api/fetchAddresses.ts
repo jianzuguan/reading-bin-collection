@@ -17,8 +17,12 @@ interface AddressesResponse {
   Addresses: Address[];
 }
 
+const debug = true;
+
 const fetchAddresses = async (postcode: string) => {
-  return addresses.Addresses;
+  if (debug) {
+    return addresses.Addresses;
+  }
 
   const response = await fetch(
     "https://api.reading.gov.uk/rbc/getaddresses/" + postcode
