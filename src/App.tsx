@@ -20,7 +20,7 @@ function App() {
     const getAddresses = async () => {
       const addressesResult = await fetchAddresses(postcode);
 
-      setAddressList(addressesResult.Addresses);
+      setAddressList(addressesResult);
     };
 
     if (isPostcodeValid(postcode)) {
@@ -38,8 +38,8 @@ function App() {
     const getCollections = async () => {
       const collectionResult = await fetchCollections(uprn);
 
-      setCollections(collectionResult.Collections);
-    }
+      setCollections(collectionResult);
+    };
     getCollections();
   }, [uprn]);
 
