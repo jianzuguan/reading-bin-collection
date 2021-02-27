@@ -1,17 +1,5 @@
 import { addresses } from "./dummyData";
-
-interface Address {
-  AccountSiteId: string;
-  AccountSiteUprn: string;
-  SiteAddress2: string;
-  SiteAddressPrefix: string;
-  SiteEasting: string;
-  SiteId: string;
-  SiteLatitude: string;
-  SiteLongitude: string;
-  SiteNorthing: string;
-  SiteShortAddress: string;
-}
+import {Address} from '../types';
 
 interface AddressesResponse {
   Addresses: Address[];

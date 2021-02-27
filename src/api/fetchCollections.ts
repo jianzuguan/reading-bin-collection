@@ -1,9 +1,5 @@
 import { collections } from "./dummyData";
-interface Collection {
-  Date: string;
-  Day: string;
-  Service: string;
-}
+import {Collection} from '../types';
 
 interface CollectionsResponse {
   Collections: Collection[];

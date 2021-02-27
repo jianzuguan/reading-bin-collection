@@ -1,14 +1,16 @@
 import React from "react";
+import { Address } from "../types";
 import AddressListItem from "./AddressListItem";
 
 interface IProps {
   addressList: any[];
   doorNumber: string;
   setUprn: (uprn: string) => void;
+  setSeletedAddress: (seletedAddress: Address) => void;
 }
 
 const AddressList = (props: IProps) => {
-  const { addressList, doorNumber, setUprn } = props;
+  const { addressList, doorNumber, setUprn, setSeletedAddress } = props;
 
   return (
     <div>
@@ -19,6 +21,7 @@ const AddressList = (props: IProps) => {
               addressData={addressData}
               onClick={() => {
                 setUprn(addressData.AccountSiteUprn);
+                setSeletedAddress(addressData);
               }}
               key={addressData.AccountSiteUprn}
             />
