@@ -25,7 +25,6 @@ function App() {
       setAddressList(addressesResult);
     };
 
-    setDoorNumber("");
     setUprn(undefined);
     setSelectedAddress(undefined);
     setAddressList([]);
@@ -58,8 +57,8 @@ function App() {
 
   return (
     <div className="App">
-      <PostcodeSearchBar onChange={setPostcode} />
-      <DoorNumberSearchBar onChange={setDoorNumber} />
+      <PostcodeSearchBar value={postcode} onChange={setPostcode} />
+      <DoorNumberSearchBar value={doorNumber} onChange={setDoorNumber} />
       {selectedAddress && (
         <p>
           <b>Address: </b>

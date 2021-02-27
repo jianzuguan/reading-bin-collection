@@ -1,11 +1,12 @@
 import react from "react";
 
 interface IProps {
+  value: string;
   onChange: (text: string) => void;
 }
 
 const PostcodeSearchBar = (props: IProps) => {
-  const { onChange } = props;
+  const {value, onChange } = props;
 
   const handleTextChange = (event: react.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
@@ -14,7 +15,7 @@ const PostcodeSearchBar = (props: IProps) => {
   return (
     <div>
       <label htmlFor="postcode-search-bar">Postcode:</label>
-      <input id="postcode-search-bar" onChange={handleTextChange} />
+      <input id="postcode-search-bar" value={value} onChange={handleTextChange} />
     </div>
   );
 };
