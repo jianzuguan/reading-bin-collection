@@ -1,9 +1,9 @@
 import React from "react";
-import AddressListItem from "./AddressListItem";
+import { Collection } from "../types";
 import CollectionListItem from "./CollectionListItem";
 
 interface IProps {
-  collectionList: any[];
+  collectionList: Collection[];
 }
 
 const CollectionList = (props: IProps) => {

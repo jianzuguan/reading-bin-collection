@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import PostcodeSearchBar from "./components/PostcodeSearchBar";
 import DoorNumberSearchBar from "./components/DoorNumberSearchBar";
@@ -8,15 +7,15 @@ import fetchAddresses from "./api/fetchAddresses";
 import { isPostcodeValid } from "./utils";
 import CollectionList from "./components/CollectionList";
 import fetchCollections from "./api/fetchCollections";
-import { Address } from "./types";
+import { Address, Collection } from "./types";
 
 function App() {
   const [postcode, setPostcode] = useState<string>("");
   const [doorNumber, setDoorNumber] = useState<string>("");
   const [uprn, setUprn] = useState<string>();
   const [selectedAddress, setSelectedAddress] = useState<Address>();
-  const [addressList, setAddressList] = useState<any[]>([]);
-  const [collections, setCollections] = useState<any[]>([]);
+  const [addressList, setAddressList] = useState<Address[]>([]);
+  const [collections, setCollections] = useState<Collection[]>([]);
 
   useEffect(() => {
     const getAddresses = async () => {

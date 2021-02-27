@@ -1,0 +1,21 @@
+.card {
+  display: flex;
+  align-items: center;
+  margin: 16pt;
+  padding: 16pt;
+  border-radius: 10pt;
+  box-shadow: 0 3pt 6pt #00000029;
+}
+
+.image {
+  height: 64px;
+  width: auto;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin: 16pt;
+  text-align: start;
+}

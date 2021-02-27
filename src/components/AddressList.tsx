@@ -27,6 +27,7 @@ const AddressList = (props: IProps) => {
             />
           );
         }
+        return '';
       })}
     </div>
   );
