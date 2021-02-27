@@ -23,12 +23,20 @@ function App() {
       setAddressList(addressesResult);
     };
 
+    setDoorNumber('');
+    setUprn(undefined);
+    setAddressList([]);
+    setCollections([]);
     if (isPostcodeValid(postcode)) {
       getAddresses();
     }
 
     return () => {};
   }, [postcode]);
+
+  useEffect(() => {
+    setCollections([]);
+  }, [doorNumber]);
 
   useEffect(() => {
     if (uprn === undefined) {
@@ -40,6 +48,8 @@ function App() {
 
       setCollections(collectionResult);
     };
+
+    setCollections([]);
     getCollections();
   }, [uprn]);
 

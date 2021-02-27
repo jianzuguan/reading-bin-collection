@@ -17,7 +17,7 @@ interface AddressesResponse {
   Addresses: Address[];
 }
 
-const debug = true;
+const debug = false;
 
 const fetchAddresses = async (postcode: string) => {
   if (debug) {
@@ -29,7 +29,7 @@ const fetchAddresses = async (postcode: string) => {
   );
   const data: AddressesResponse = await response.json();
 
-  if ("Addresses" in data) {
+  if ("Addresses" in data && data.Addresses !== null) {
     return data.Addresses;
   }
 

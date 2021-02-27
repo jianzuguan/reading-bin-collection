@@ -9,7 +9,7 @@ interface CollectionsResponse {
   Collections: Collection[];
 }
 
-const debug = true;
+const debug = false;
 
 // uprn: Unique Property Reference Number
 const fetchCollections = async (uprn: string) => {
@@ -22,7 +22,7 @@ const fetchCollections = async (uprn: string) => {
   );
   const data: CollectionsResponse = await response.json();
 
-  if ("Collections" in data) {
+  if ("Collections" in data && data.Collections !== null) {
     return data.Collections;
   }
 
