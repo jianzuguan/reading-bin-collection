@@ -16,6 +16,6 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-  margin: 16pt;
+  margin: 0 16pt;
   text-align: start;
 }

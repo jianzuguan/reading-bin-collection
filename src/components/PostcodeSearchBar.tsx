@@ -15,7 +15,7 @@ const PostcodeSearchBar = (props: IProps) => {
   return (
     <div>
       <label htmlFor="postcode-search-bar">Postcode:</label>
-      <input id="postcode-search-bar" value={value} onChange={handleTextChange} />
+      <input id="postcode-search-bar" value={value} onChange={handleTextChange} autoFocus/>
     </div>
   );
 };
