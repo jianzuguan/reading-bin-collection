@@ -65,7 +65,7 @@ function App() {
           {selectedAddress.SiteShortAddress}
         </p>
       )}
-      {collections.length === 0 ? (
+      {!selectedAddress && collections.length === 0 ? (
         <AddressList
           addressList={addressList}
           doorNumber={doorNumber}
