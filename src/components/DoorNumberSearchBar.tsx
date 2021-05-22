@@ -15,16 +15,16 @@ const DoorNumberSearchBar = (props: IProps) => {
   };
 
   return (
+    <div className={styles.my2}>
       <TextField
         variant="outlined"
         fullWidth
-        className={styles.my2}
         id="door-number-search-bar"
         label="Door Number"
         value={value}
         onChange={handleTextChange}
-
       />
+    </div>
   );
 };
 

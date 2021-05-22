@@ -15,16 +15,17 @@ const PostcodeSearchBar = (props: IProps) => {
   };
 
   return (
-    <TextField
-      variant="outlined"
-      fullWidth
-      className={styles.my2}
-      id="postcode-search-bar"
-      label="Postcode"
-      value={value}
-      onChange={handleTextChange}
-      autoFocus
-    />
+    <div className={styles.my2}>
+      <TextField
+        variant="outlined"
+        fullWidth
+        id="postcode-search-bar"
+        label="Postcode"
+        value={value}
+        onChange={handleTextChange}
+        autoFocus
+      />
+    </div>
   );
 };
 
