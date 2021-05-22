@@ -16,3 +16,8 @@
   margin: 0 16pt;
   text-align: start;
 }
+
+.my2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}

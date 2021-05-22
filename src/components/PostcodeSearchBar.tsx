@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextField } from '@material-ui/core';
+import styles from './PostcodeSearchBar.module.css';
 
 interface IProps {
   value: string;
@@ -17,6 +18,7 @@ const PostcodeSearchBar = (props: IProps) => {
     <TextField
       variant="outlined"
       fullWidth
+      className={styles.my2}
       id="postcode-search-bar"
       label="Postcode"
       value={value}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextField } from '@material-ui/core';
+import styles from './DoorNumberSearchBar.module.css';
 
 interface IProps {
   value: string;
@@ -17,6 +18,7 @@ const DoorNumberSearchBar = (props: IProps) => {
       <TextField
         variant="outlined"
         fullWidth
+        className={styles.my2}
         id="door-number-search-bar"
         label="Door Number"
         value={value}

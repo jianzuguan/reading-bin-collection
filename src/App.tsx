@@ -56,7 +56,7 @@ function App() {
   }, [uprn]);
 
   return (
-    <Container>
+    <Container className="py4">
       <PostcodeSearchBar value={postcode} onChange={setPostcode} />
       <DoorNumberSearchBar value={doorNumber} onChange={setDoorNumber} />
       {selectedAddress && (

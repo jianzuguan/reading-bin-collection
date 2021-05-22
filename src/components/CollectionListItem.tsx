@@ -35,7 +35,7 @@ const CollectionListItem = (props: IProps) => {
   }, [Service]);
 
   return (
-    <Paper elevation={3}>
+    <Paper elevation={3} className={styles.my2}>
       <div className={styles.card}>
         <img src={wasteImg} alt={wasteImgAlt} className={styles.image} />
         <div className={styles.details}>
