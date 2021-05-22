@@ -1,4 +1,5 @@
-import react from "react";
+import React from 'react';
+import { TextField } from '@material-ui/core';
 
 interface IProps {
   value: string;
@@ -6,17 +7,22 @@ interface IProps {
 }
 
 const PostcodeSearchBar = (props: IProps) => {
-  const {value, onChange } = props;
+  const { value, onChange } = props;
 
-  const handleTextChange = (event: react.ChangeEvent<HTMLInputElement>) => {
+  const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
 
   return (
-    <div>
-      <label htmlFor="postcode-search-bar">Postcode:</label>
-      <input id="postcode-search-bar" value={value} onChange={handleTextChange} autoFocus/>
-    </div>
+    <TextField
+      variant="outlined"
+      fullWidth
+      id="postcode-search-bar"
+      label="Postcode"
+      value={value}
+      onChange={handleTextChange}
+      autoFocus
+    />
   );
 };
 

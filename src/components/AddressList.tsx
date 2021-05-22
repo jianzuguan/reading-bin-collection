@@ -1,4 +1,5 @@
 import React from "react";
+import { List } from "@material-ui/core";
 import { Address } from "../types";
 import AddressListItem from "./AddressListItem";
 
@@ -6,14 +7,14 @@ interface IProps {
   addressList: any[];
   doorNumber: string;
   setUprn: (uprn: string) => void;
-  setSeletedAddress: (seletedAddress: Address) => void;
+  setSelectedAddress: (selectedAddress: Address) => void;
 }
 
 const AddressList = (props: IProps) => {
-  const { addressList, doorNumber, setUprn, setSeletedAddress } = props;
+  const { addressList, doorNumber, setUprn, setSelectedAddress } = props;
 
   return (
-    <div>
+    <List>
       {addressList.map((addressData) => {
         if (addressData.SiteShortAddress?.includes(doorNumber)) {
           return (
@@ -21,7 +22,7 @@ const AddressList = (props: IProps) => {
               addressData={addressData}
               onClick={() => {
                 setUprn(addressData.AccountSiteUprn);
-                setSeletedAddress(addressData);
+                setSelectedAddress(addressData);
               }}
               key={addressData.AccountSiteUprn}
             />
@@ -29,7 +30,7 @@ const AddressList = (props: IProps) => {
         }
         return '';
       })}
-    </div>
+    </List>
   );
 };
 

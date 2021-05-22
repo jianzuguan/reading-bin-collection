@@ -1,4 +1,5 @@
-import react from 'react';
+import React from 'react';
+import { TextField } from '@material-ui/core';
 
 interface IProps {
   value: string;
@@ -6,18 +7,23 @@ interface IProps {
 }
 
 const DoorNumberSearchBar = (props: IProps) => {
-  const {value, onChange} = props;
+  const { value, onChange } = props;
 
-  const handleTextChange = (event: react.ChangeEvent<HTMLInputElement>) => {
+  const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
-  }
+  };
 
   return (
-    <div>
-      <label htmlFor="door-number-search-bar">Door Number:</label>
-      <input id="door-number-search-bar" value={value} onChange={handleTextChange}/>
-    </div>
-  )
-}
+      <TextField
+        variant="outlined"
+        fullWidth
+        id="door-number-search-bar"
+        label="Door Number"
+        value={value}
+        onChange={handleTextChange}
+
+      />
+  );
+};
 
 export default DoorNumberSearchBar;

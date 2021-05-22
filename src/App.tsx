@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
-import "./App.css";
-import PostcodeSearchBar from "./components/PostcodeSearchBar";
-import DoorNumberSearchBar from "./components/DoorNumberSearchBar";
-import AddressList from "./components/AddressList";
-import fetchAddresses from "./api/fetchAddresses";
-import { isPostcodeValid } from "./utils";
-import CollectionList from "./components/CollectionList";
-import fetchCollections from "./api/fetchCollections";
-import { Address, Collection } from "./types";
+import React, { useEffect, useState } from 'react';
+import { Container } from '@material-ui/core';
+import './App.css';
+import PostcodeSearchBar from './components/PostcodeSearchBar';
+import DoorNumberSearchBar from './components/DoorNumberSearchBar';
+import AddressList from './components/AddressList';
+import fetchAddresses from './api/fetchAddresses';
+import { isPostcodeValid } from './utils';
+import CollectionList from './components/CollectionList';
+import fetchCollections from './api/fetchCollections';
+import { Address, Collection } from './types';
 
 function App() {
-  const [postcode, setPostcode] = useState<string>("");
-  const [doorNumber, setDoorNumber] = useState<string>("");
+  const [postcode, setPostcode] = useState<string>('');
+  const [doorNumber, setDoorNumber] = useState<string>('');
   const [uprn, setUprn] = useState<string>();
   const [selectedAddress, setSelectedAddress] = useState<Address>();
   const [addressList, setAddressList] = useState<Address[]>([]);
@@ -55,7 +56,7 @@ function App() {
   }, [uprn]);
 
   return (
-    <div className="App">
+    <Container>
       <PostcodeSearchBar value={postcode} onChange={setPostcode} />
       <DoorNumberSearchBar value={doorNumber} onChange={setDoorNumber} />
       {selectedAddress && (
@@ -69,12 +70,12 @@ function App() {
           addressList={addressList}
           doorNumber={doorNumber}
           setUprn={setUprn}
-          setSeletedAddress={setSelectedAddress}
+          setSelectedAddress={setSelectedAddress}
         />
       ) : (
         <CollectionList collectionList={collections} />
       )}
-    </div>
+    </Container>
   );
 }
 

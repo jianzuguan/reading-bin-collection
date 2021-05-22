@@ -1,10 +1,7 @@
 .card {
   display: flex;
   align-items: center;
-  margin: 16pt;
   padding: 16pt;
-  border-radius: 10pt;
-  box-shadow: 0 3pt 6pt #00000029;
 }
 
 .image {
@@ -15,7 +12,7 @@
 .details {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   margin: 0 16pt;
   text-align: start;
 }
