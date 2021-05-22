@@ -19,6 +19,21 @@ function App() {
   const [collections, setCollections] = useState<Collection[]>([]);
 
   useEffect(() => {
+    setPostcode(localStorage.getItem('postcode') || '');
+    setDoorNumber(localStorage.getItem('doorNumber') || '');
+  }, []);
+
+  // Remember for next visit.
+  useEffect(() => {
+    localStorage.setItem('postcode', postcode);
+  }, [postcode]);
+
+  useEffect(() => {
+    localStorage.setItem('doorNumber', doorNumber);
+  }, [doorNumber]);
+
+  // Fetching data.
+  useEffect(() => {
     const getAddresses = async () => {
       const addressesResult = await fetchAddresses(postcode);
 
